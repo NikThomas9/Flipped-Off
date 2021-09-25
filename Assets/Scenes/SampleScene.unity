@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: pivotPoints
       value: 
       objectReference: {fileID: 840735204}
+    - target: {fileID: 5338668249784584360, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: rotateSpeed
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
 --- !u!1001 &6781415185522602618

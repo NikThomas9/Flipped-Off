@@ -23,16 +23,23 @@ public class playerMovement : MonoBehaviour
         GetMoveDirection();
         if (moving) 
         {
-            transform.RotateAround(direction, rotateAxis, rotateSpeed * Time.deltaTime);
             totalRotation += rotateSpeed * Time.deltaTime;
+            if(totalRotation > 90f)
+            {
+                transform.RotateAround(direction, rotateAxis, rotateSpeed * Time.deltaTime - (totalRotation - 90f));
+            }    
+            else
+            {
+                transform.RotateAround(direction, rotateAxis, rotateSpeed * Time.deltaTime);
+            }
+                
+            
         }
         if(totalRotation >= 90f)
         {
             moving = false;
             totalRotation = 0f;
         }
-
-
     }
 
     private void GetMoveDirection()
