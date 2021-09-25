@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\GameController\SliderController.cs" />
      <Compile Include="Assets\Scripts\GameController\Singleton.cs" />
      <Compile Include="Assets\Scripts\collisionManager.cs" />
+     <Compile Include="Assets\Scripts\Collectible.cs" />
      <None Include="Assets\How to use the Game Controller.txt" />
     <Reference Include="UnityEngine">
         <HintPath>F:\2020.3.19f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

@@ -21,7 +21,7 @@ public class collisionManager : MonoBehaviour
     {
         if (col.gameObject.tag == "Collectible")
         {
-            transform.localScale += growthVector;
+            transform.localScale += col.gameObject.GetComponent<Collectible>().growthValue;
             Destroy(col.gameObject);
             transform.position += new Vector3(0, growthVector.y, 0);
         }
