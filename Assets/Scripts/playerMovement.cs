@@ -6,9 +6,9 @@ public class playerMovement : MonoBehaviour
 {
     public GameObject pivotPoints;
     private bool moving = false;
-    public Vector3 direction;
+    private Vector3 direction;
     private float totalRotation = 0f;
-    public Vector3 rotateAxis;
+    private Vector3 rotateAxis;
 
     public int rotateSpeed = 180;
     // Start is called before the first frame update
@@ -31,9 +31,7 @@ public class playerMovement : MonoBehaviour
             else
             {
                 transform.RotateAround(direction, rotateAxis, rotateSpeed * Time.deltaTime);
-            }
-                
-            
+            } 
         }
         if(totalRotation >= 90f)
         {
