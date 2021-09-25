@@ -60,7 +60,8 @@
     <Compile Include="Assets\Scripts\GameController\GameControllerDevelop.cs" />
     <Compile Include="Assets\Scripts\GameController\SliderController.cs" />
     <Compile Include="Assets\Scripts\GameController\Singleton.cs" />
-    <Compile Include="Assets\Scripts\movementController.cs" />
+    <Compile Include="Assets\Scripts\playerMovement.cs" />
+    <Compile Include="Assets\Scripts\pivotMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\How to use the Game Controller.txt" />
