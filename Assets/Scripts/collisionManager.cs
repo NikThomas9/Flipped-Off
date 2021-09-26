@@ -10,6 +10,7 @@ public class collisionManager : MonoBehaviour
     public Transform pivotRight;
     public Transform pivotForward;
     public Transform pivotBackward;
+    public FlippedOff_cameraShake shakeController;
     private Vector3 growthValue;
 
     // Start is called before the first frame update
@@ -36,6 +37,8 @@ public class collisionManager : MonoBehaviour
                 //Box grows larger
                 growthValue = col.gameObject.GetComponent<Collectible>().growthValue;
                 transform.localScale += growthValue;
+                shakeController.shakeMagnitude += 0.05f;
+
                 Destroy(col.gameObject);
                 currentSize += col.gameObject.GetComponent<Collectible>().pointsGiven;
                 pivotReposition();

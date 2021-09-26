@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     [SerializeField] private GameObject pivotPoints;
     private bool moving = false;
+    public FlippedOff_cameraShake shakeController;
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public float totalRotation = 0f;
     [HideInInspector] public Vector3 rotateAxis;
@@ -38,6 +39,7 @@ public class playerMovement : MonoBehaviour
             moving = false;
             totalRotation = 0f;
             transform.position = new Vector3(transform.position.x, transform.lossyScale.y / 2, transform.position.z);
+            shakeController.TriggerShake();
         }
     }
 
