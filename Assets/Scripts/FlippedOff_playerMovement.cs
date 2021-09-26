@@ -7,6 +7,7 @@ public class FlippedOff_playerMovement : MonoBehaviour
     [SerializeField] private GameObject pivotPoints;
     [SerializeField] private AudioSource slamSFX;
     private bool moving = false;
+    public GameObject[] collectibles;
     public FlippedOff_cameraShake shakeController;
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public float totalRotation = 0f;
@@ -16,7 +17,7 @@ public class FlippedOff_playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        collectibles = GameObject.FindGameObjectsWithTag("Collectible");
     }
 
     // Update is called once per frame
@@ -41,6 +42,12 @@ public class FlippedOff_playerMovement : MonoBehaviour
             totalRotation = 0f;
             transform.position = new Vector3(transform.position.x, transform.lossyScale.y / 2, transform.position.z);
             shakeController.TriggerShake();
+
+            foreach(GameObject obj in collectibles)
+            {
+                if (obj != null)
+                    obj.GetComponent<FlippedOff_collectible>().TriggerJump();
+            }
             slamSFX.Play();
         }
     }
