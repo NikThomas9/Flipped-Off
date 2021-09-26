@@ -7,6 +7,7 @@ public class Collectible : MonoBehaviour
     public Vector3 growthValue;
     public float sizeRequired;
     public float pointsGiven;
+    public bool winningCollectible;
 
     // Start is called before the first frame update
     void Start()

@@ -28,9 +28,11 @@ public class GameControllerDevelop : GameController
         }
         if (FindObjectsOfType(typeof(GameController)).Length > 1)
         {
-            gameDifficulty = gameDifficultySlider;
             Destroy(this);
         }
+        else
+            gameDifficulty = gameDifficultySlider;
+        print(gameDifficulty);
     }
 
     private void Start()

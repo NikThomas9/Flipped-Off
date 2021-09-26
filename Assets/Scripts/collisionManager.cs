@@ -5,12 +5,12 @@ using UnityEngine;
 public class collisionManager : MonoBehaviour
 {
     [SerializeField] private float currentSize = 0; 
-    [SerializeField] private Vector3 growthVector;
     public BoxCollider playerCol;
     public Transform pivotLeft;
     public Transform pivotRight;
     public Transform pivotForward;
     public Transform pivotBackward;
+    private Vector3 growthValue;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +31,14 @@ public class collisionManager : MonoBehaviour
         {
             if (currentSize >= col.gameObject.GetComponent<Collectible>().sizeRequired)
             {
+                if (col.gameObject.GetComponent<Collectible>().winningCollectible)
+                    GameController.Instance.WinGame();
                 //Box grows larger
-                transform.localScale += col.gameObject.GetComponent<Collectible>().growthValue;
+                growthValue = col.gameObject.GetComponent<Collectible>().growthValue;
+                transform.localScale += growthValue;
                 Destroy(col.gameObject);
-                transform.position += new Vector3(0, growthVector.y, 0);
                 currentSize += col.gameObject.GetComponent<Collectible>().pointsGiven;
-                pivotReposition(col);
+                pivotReposition();
             }
             else
             {
@@ -46,21 +48,14 @@ public class collisionManager : MonoBehaviour
         }
     }
 
-    void pivotReposition(Collision col)
+    void pivotReposition()
     {
-        pivotLeft.localPosition += new Vector3((pivotLeft.localPosition.x * col.gameObject.GetComponent<Collectible>().growthValue.x), 
-        (pivotLeft.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 0);
-        
-        pivotRight.localPosition += new Vector3((pivotRight.localPosition.x * col.gameObject.GetComponent<Collectible>().growthValue.x), 
-        (pivotRight.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 0);
+        pivotLeft.localPosition = new Vector3(-playerCol.transform.localScale.x / 2, -playerCol.transform.localScale.x / 2, 0);
 
-        pivotForward.localPosition += new Vector3(0, (pivotForward.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 
-        (pivotForward.localPosition.z * col.gameObject.GetComponent<Collectible>().growthValue.z));
+        pivotBackward.localPosition = new Vector3(0, -playerCol.transform.localScale.x / 2, -playerCol.transform.localScale.x / 2);
 
-        pivotBackward.localPosition += new Vector3(0, (pivotBackward.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 
-        (pivotBackward.localPosition.z * col.gameObject.GetComponent<Collectible>().growthValue.z));
+        pivotForward.localPosition = new Vector3(0, -playerCol.transform.localScale.x / 2, playerCol.transform.localScale.x / 2);
 
-        //pivotLeft.position += new Vector3((playerCol.bounds.size.x/2), 0, 0);
-        //pivotLeft.position += new Vector3((playerCol.bounds.size.x/2), 0, 0);
+        pivotRight.localPosition = new Vector3(playerCol.transform.localScale.x / 2, -playerCol.transform.localScale.x / 2, 0);
     }
 }

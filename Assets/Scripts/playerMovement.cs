@@ -37,6 +37,7 @@ public class playerMovement : MonoBehaviour
         {
             moving = false;
             totalRotation = 0f;
+            transform.position = new Vector3(transform.position.x, transform.lossyScale.y / 2, transform.position.z);
         }
     }
 
