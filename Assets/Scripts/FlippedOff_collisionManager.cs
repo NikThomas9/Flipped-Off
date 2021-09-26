@@ -49,7 +49,7 @@ public class FlippedOff_collisionManager : MonoBehaviour
             }
             else
             {
-                boingSFX.Play();
+                //boingSFX.Play();
                 reverseDirection();
 
                 Debug.Log("Can't be eaten!");
