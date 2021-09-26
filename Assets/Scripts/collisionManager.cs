@@ -42,7 +42,20 @@ public class collisionManager : MonoBehaviour
             }
             else
             {
-                //Insert code to move block back
+                playerMovement player = playerCol.gameObject.GetComponent<playerMovement>();
+
+                //reverse direction of rotation
+                if (player.rotateAxis == Vector3.right || player.rotateAxis == Vector3.left)
+                    player.direction.x = -player.direction.x;
+                else
+                    player.direction.z = -player.direction.z;
+
+                //reverse axis of rotation
+                player.rotateAxis = -player.rotateAxis;
+
+                //set rotation amount to the remained of the original rotation
+                player.totalRotation = 90f - player.totalRotation;
+
                 Debug.Log("Can't be eaten!");
             }
         }

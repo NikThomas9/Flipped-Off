@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public GameObject pivotPoints;
+    [SerializeField] private GameObject pivotPoints;
     private bool moving = false;
-    private Vector3 direction;
-    private float totalRotation = 0f;
-    private Vector3 rotateAxis;
+    [HideInInspector] public Vector3 direction;
+    [HideInInspector] public float totalRotation = 0f;
+    [HideInInspector] public Vector3 rotateAxis;
 
     public int rotateSpeed = 180;
     // Start is called before the first frame update
