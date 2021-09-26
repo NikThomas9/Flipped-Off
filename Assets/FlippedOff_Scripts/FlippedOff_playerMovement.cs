@@ -12,6 +12,12 @@ public class FlippedOff_playerMovement : MonoBehaviour
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public float totalRotation = 0f;
     [HideInInspector] public Vector3 rotateAxis;
+    public Animator animator;
+    public Animator animator1;
+    public Animator animator2;
+    public Animator animator3;
+    public Animator animator4;
+    public Animator animator5;
 
     public int rotateSpeed = 180;
     // Start is called before the first frame update
@@ -42,6 +48,29 @@ public class FlippedOff_playerMovement : MonoBehaviour
             totalRotation = 0f;
             transform.position = new Vector3(transform.position.x, transform.lossyScale.y / 2, transform.position.z);
             shakeController.TriggerShake();
+            animator.SetBool("isEating", false);
+            animator.SetBool("isBouncing", false);
+            animator.SetBool("isIdle", true);
+
+            animator1.SetBool("isEating", false);
+            animator1.SetBool("isBouncing", false);
+            animator1.SetBool("isIdle", true);
+
+            animator2.SetBool("isEating", false);
+            animator2.SetBool("isBouncing", false);
+            animator2.SetBool("isIdle", true);
+
+            animator3.SetBool("isEating", false);
+            animator3.SetBool("isBouncing", false);
+            animator3.SetBool("isIdle", true);
+
+            animator4.SetBool("isEating", false);
+            animator4.SetBool("isBouncing", false);
+            animator4.SetBool("isIdle", true);
+
+            animator5.SetBool("isEating", false);
+            animator5.SetBool("isBouncing", false);
+            animator5.SetBool("isIdle", true);
 
             foreach(GameObject obj in collectibles)
             {

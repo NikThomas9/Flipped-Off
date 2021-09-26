@@ -13,13 +13,23 @@ public class FlippedOff_collisionManager : MonoBehaviour
     public Transform pivotForward;
     public Transform pivotBackward;
     public FlippedOff_cameraShake shakeController;
+    public Animator animator;
+    public Animator animator1;
+    public Animator animator2;
+    public Animator animator3;
+    public Animator animator4;
+    public Animator animator5;
     private Vector3 growthValue;
+
+    //private gameObject face;
 
     // Start is called before the first frame update
     void Start()
     {
         playerCol = gameObject.GetComponent<BoxCollider>();
         Debug.Log(GameController.Instance.gameDifficulty);
+
+        //face = Transform.Find("Plane")
     }
 
     // Update is called once per frame
@@ -45,6 +55,23 @@ public class FlippedOff_collisionManager : MonoBehaviour
 
                 Destroy(col.gameObject);
                 currentSize += col.gameObject.GetComponent<FlippedOff_collectible>().pointsGiven;
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isEating", true);
+
+                animator1.SetBool("isIdle", false);
+                animator1.SetBool("isEating", true);
+
+                animator2.SetBool("isIdle", false);
+                animator2.SetBool("isEating", true);
+
+                animator3.SetBool("isIdle", false);
+                animator3.SetBool("isEating", true);
+
+                animator4.SetBool("isIdle", false);
+                animator4.SetBool("isEating", true);
+
+                animator5.SetBool("isIdle", false);
+                animator5.SetBool("isEating", true);
                 pivotReposition();
             }
             else
@@ -65,6 +92,24 @@ public class FlippedOff_collisionManager : MonoBehaviour
 
     void reverseDirection()
     {
+        Debug.Log("I am bouncing");
+        animator.SetBool("isIdle", false);
+        animator.SetBool("isBouncing", true);
+
+        animator1.SetBool("isIdle", false);
+        animator1.SetBool("isBouncing", true);
+
+        animator2.SetBool("isIdle", false);
+        animator2.SetBool("isBouncing", true);
+
+        animator3.SetBool("isIdle", false);
+        animator3.SetBool("isBouncing", true);
+
+        animator4.SetBool("isIdle", false);
+        animator4.SetBool("isBouncing", true);
+
+        animator5.SetBool("isIdle", false);
+        animator5.SetBool("isBouncing", true);
         print("reversing direction");
         FlippedOff_playerMovement player = playerCol.gameObject.GetComponent<FlippedOff_playerMovement>();
 
