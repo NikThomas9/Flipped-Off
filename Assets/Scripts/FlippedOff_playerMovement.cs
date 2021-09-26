@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlippedOff_playerMovement : MonoBehaviour
 {
     [SerializeField] private GameObject pivotPoints;
+    [SerializeField] private AudioSource slamSFX;
     private bool moving = false;
     public FlippedOff_cameraShake shakeController;
     [HideInInspector] public Vector3 direction;
@@ -40,6 +41,7 @@ public class FlippedOff_playerMovement : MonoBehaviour
             totalRotation = 0f;
             transform.position = new Vector3(transform.position.x, transform.lossyScale.y / 2, transform.position.z);
             shakeController.TriggerShake();
+            slamSFX.Play();
         }
     }
 

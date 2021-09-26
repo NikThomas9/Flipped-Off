@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlippedOff_collisionManager : MonoBehaviour
 {
     [SerializeField] private float currentSize = 0; 
+    [SerializeField] private AudioSource collectSFX;
     public BoxCollider playerCol;
     public Transform pivotLeft;
     public Transform pivotRight;
@@ -32,6 +33,9 @@ public class FlippedOff_collisionManager : MonoBehaviour
         {
             if (currentSize >= col.gameObject.GetComponent<FlippedOff_collectible>().sizeRequired)
             {
+                collectSFX.Play();
+                //Chomp SFX
+                
                 if (col.gameObject.GetComponent<FlippedOff_collectible>().winningCollectible)
                     GameController.Instance.WinGame();
                 //Box grows larger
@@ -45,6 +49,7 @@ public class FlippedOff_collisionManager : MonoBehaviour
             }
             else
             {
+                //Boink SFX
                 reverseDirection();
 
                 Debug.Log("Can't be eaten!");
