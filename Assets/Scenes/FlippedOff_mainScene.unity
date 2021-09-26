@@ -214,15 +214,15 @@ Transform:
   m_Children:
   - {fileID: 357124747}
   - {fileID: 1106462787}
+  - {fileID: 511709692}
   - {fileID: 40816878}
   - {fileID: 180872758}
-  - {fileID: 1675659629}
   - {fileID: 1811109336}
-  - {fileID: 815288701}
-  - {fileID: 1753233115}
+  - {fileID: 1675659629}
   - {fileID: 459385187}
   - {fileID: 1552454805}
-  - {fileID: 511709692}
+  - {fileID: 815288701}
+  - {fileID: 1753233115}
   - {fileID: 1814426929}
   - {fileID: 1282261405}
   - {fileID: 303769996}
@@ -3297,6 +3297,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1307799171045479838, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538173760887826185, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5338668249784584355, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3369,6 +3377,22 @@ PrefabInstance:
       propertyPath: shakeController
       value: 
       objectReference: {fileID: 519420030}
+    - target: {fileID: 5509152135926968482, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540959805810900996, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854366953294172906, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876731181973452547, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
 --- !u!1001 &6781415185522602618
