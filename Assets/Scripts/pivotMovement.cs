@@ -5,6 +5,7 @@ using UnityEngine;
 public class pivotMovement : MonoBehaviour
 {
     public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,6 @@ public class pivotMovement : MonoBehaviour
     void Update()
     {
         this.transform.position = player.transform.position;
+        
     }
 }
