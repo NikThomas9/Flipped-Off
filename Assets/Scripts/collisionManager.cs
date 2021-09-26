@@ -16,6 +16,7 @@ public class collisionManager : MonoBehaviour
     void Start()
     {
         playerCol = gameObject.GetComponent<BoxCollider>();
+        Debug.Log(GameController.Instance.gameDifficulty);
     }
 
     // Update is called once per frame
@@ -47,8 +48,18 @@ public class collisionManager : MonoBehaviour
 
     void pivotReposition(Collision col)
     {
-        pivotLeft.position += new Vector3((pivotLeft.position.x * col.gameObject.GetComponent<Collectible>().growthValue.x), 0, 0);
-        //pivotLeft.position += new Vector3((playerCol.bounds.size.x/2), 0, 0);
+        pivotLeft.localPosition += new Vector3((pivotLeft.localPosition.x * col.gameObject.GetComponent<Collectible>().growthValue.x), 
+        (pivotLeft.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 0);
+        
+        pivotRight.localPosition += new Vector3((pivotRight.localPosition.x * col.gameObject.GetComponent<Collectible>().growthValue.x), 
+        (pivotRight.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 0);
+
+        pivotForward.localPosition += new Vector3(0, (pivotForward.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 
+        (pivotForward.localPosition.z * col.gameObject.GetComponent<Collectible>().growthValue.z));
+
+        pivotBackward.localPosition += new Vector3(0, (pivotBackward.localPosition.y * col.gameObject.GetComponent<Collectible>().growthValue.y), 
+        (pivotBackward.localPosition.z * col.gameObject.GetComponent<Collectible>().growthValue.z));
+
         //pivotLeft.position += new Vector3((playerCol.bounds.size.x/2), 0, 0);
         //pivotLeft.position += new Vector3((playerCol.bounds.size.x/2), 0, 0);
     }
