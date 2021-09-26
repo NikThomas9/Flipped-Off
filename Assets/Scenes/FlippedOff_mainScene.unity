@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5935532297905347537, guid: 45cf17af2cbaf2448ab039186ff60f96, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5935532297905347565, guid: 45cf17af2cbaf2448ab039186ff60f96, type: 3}
       propertyPath: m_Name
       value: Collectible (1)
@@ -322,6 +326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlippedOff_Boundary (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3992529943850459005, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d65fadb38cfe7f04fbda07156c376ff0, type: 2}
     - target: {fileID: 4090452363394018721, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -629,6 +637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlippedOff_Boundary (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3992529943850459005, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d65fadb38cfe7f04fbda07156c376ff0, type: 2}
     - target: {fileID: 4090452363394018721, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -686,6 +698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlippedOff_Boundary
       objectReference: {fileID: 0}
+    - target: {fileID: 3992529943850459005, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d65fadb38cfe7f04fbda07156c376ff0, type: 2}
     - target: {fileID: 4090452363394018721, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -812,6 +828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlippedOff_Boundary (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3992529943850459005, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d65fadb38cfe7f04fbda07156c376ff0, type: 2}
     - target: {fileID: 4090452363394018721, guid: cf056b24b68fc3146beb46d0c3d0300f, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -1070,7 +1090,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1370,6 +1390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8804943762270056525, guid: 630cd3f66c5d0ee4c9ccd71fbbe88fd7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 8804943762270056561, guid: 630cd3f66c5d0ee4c9ccd71fbbe88fd7, type: 3}
       propertyPath: m_Name
       value: Collectible (3)
