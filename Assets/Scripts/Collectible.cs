@@ -5,6 +5,8 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     public Vector3 growthValue;
+    public float sizeRequired;
+    public float pointsGiven;
 
     // Start is called before the first frame update
     void Start()
