@@ -350,6 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b5a902f1ccc0e4194e4ae223005bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeDuration: 0
+  shakeMagnitude: 0.05
+  dampingSpeed: 1
+  shakeAmount: 0.2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -451,6 +455,7 @@ MonoBehaviour:
   pivotRight: {fileID: 66588453}
   pivotForward: {fileID: 1664052399}
   pivotBackward: {fileID: 1821766300}
+  shakeController: {fileID: 519420030}
 --- !u!1 &779559478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1349,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 5338668249784584360, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
+      propertyPath: shakeController
+      value: 
+      objectReference: {fileID: 519420030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8d50e0fcffd365418a662b557e6b258, type: 3}
 --- !u!1001 &5935532296866658289
