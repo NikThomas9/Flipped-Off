@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collisionManager : MonoBehaviour
+public class FlippedOff_collisionManager : MonoBehaviour
 {
     [SerializeField] private float currentSize = 0; 
     public BoxCollider playerCol;
@@ -30,38 +30,50 @@ public class collisionManager : MonoBehaviour
     {
         if (col.gameObject.tag == "Collectible")
         {
-            if (currentSize >= col.gameObject.GetComponent<Collectible>().sizeRequired)
+            if (currentSize >= col.gameObject.GetComponent<FlippedOff_collectible>().sizeRequired)
             {
-                if (col.gameObject.GetComponent<Collectible>().winningCollectible)
+                if (col.gameObject.GetComponent<FlippedOff_collectible>().winningCollectible)
                     GameController.Instance.WinGame();
                 //Box grows larger
-                growthValue = col.gameObject.GetComponent<Collectible>().growthValue;
+                growthValue = col.gameObject.GetComponent<FlippedOff_collectible>().growthValue;
                 transform.localScale += growthValue;
                 shakeController.shakeMagnitude += 0.05f;
 
                 Destroy(col.gameObject);
-                currentSize += col.gameObject.GetComponent<Collectible>().pointsGiven;
+                currentSize += col.gameObject.GetComponent<FlippedOff_collectible>().pointsGiven;
                 pivotReposition();
             }
             else
             {
-                playerMovement player = playerCol.gameObject.GetComponent<playerMovement>();
-
-                //reverse direction of rotation
-                if (player.rotateAxis == Vector3.right || player.rotateAxis == Vector3.left)
-                    player.direction.x = -player.direction.x;
-                else
-                    player.direction.z = -player.direction.z;
-
-                //reverse axis of rotation
-                player.rotateAxis = -player.rotateAxis;
-
-                //set rotation amount to the remained of the original rotation
-                player.totalRotation = 90f - player.totalRotation;
+                reverseDirection();
 
                 Debug.Log("Can't be eaten!");
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Boundary")
+            reverseDirection();
+    }
+
+    void reverseDirection()
+    {
+        print("reversing direction");
+        FlippedOff_playerMovement player = playerCol.gameObject.GetComponent<FlippedOff_playerMovement>();
+
+        //reverse direction of rotation
+        if (player.rotateAxis == Vector3.right || player.rotateAxis == Vector3.left)
+            player.direction.x = -player.direction.x;
+        else
+            player.direction.z = -player.direction.z;
+
+        //reverse axis of rotation
+        player.rotateAxis = -player.rotateAxis;
+
+        //set rotation amount to the remained of the original rotation
+        player.totalRotation = 90f - player.totalRotation;
     }
 
     void pivotReposition()

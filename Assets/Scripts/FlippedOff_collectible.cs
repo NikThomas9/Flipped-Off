@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public class FlippedOff_collectible : MonoBehaviour
 {
     public Vector3 growthValue;
     public float sizeRequired;

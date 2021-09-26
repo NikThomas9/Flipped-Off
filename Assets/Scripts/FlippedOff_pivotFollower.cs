@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pivotMovement : MonoBehaviour
+public class FlippedOff_pivotFollower : MonoBehaviour
 {
     public GameObject player;
 

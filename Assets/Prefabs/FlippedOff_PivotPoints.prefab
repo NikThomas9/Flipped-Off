@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6781415186296155039}
   - component: {fileID: 3249567960003032020}
   m_Layer: 0
-  m_Name: Pivot Points
+  m_Name: FlippedOff_PivotPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

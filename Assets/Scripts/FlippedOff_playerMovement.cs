@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class FlippedOff_playerMovement : MonoBehaviour
 {
     [SerializeField] private GameObject pivotPoints;
     private bool moving = false;
