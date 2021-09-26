@@ -14,6 +14,14 @@ public class FlippedOff_collectible : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (winningCollectible)
+        {
+            sizeRequired = 15 + (GameController.Instance.gameDifficulty * 2);
+            Vector3 difficultyScale = new Vector3(.7f, .7f, .7f) * (GameController.Instance.gameDifficulty - 1);
+            transform.localScale += difficultyScale;
+            transform.position += new Vector3(0, difficultyScale.y, 0);
+        }
+
         if (growthValue == null)
         {
             growthValue = new Vector3(.2f, .2f, .2f);
